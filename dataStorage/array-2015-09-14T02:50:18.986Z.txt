@@ -1,0 +1,1 @@
+[{"location":"Walmart","sex":"Male","notes":""},{"location":"Walmart","sex":"Male","notes":""},{"location":"Walmart","sex":"Male","notes":""},{"location":"BestBuy","sex":"Male","notes":""},{"location":"BestBuy","sex":"Male","notes":""},{"location":"Kohls","sex":"Male","notes":""}]

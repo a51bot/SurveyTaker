@@ -1,0 +1,36 @@
+/*style.css*/
+
+    table, th, td {
+        border: 5px solid black;
+    }
+
+    .button {
+        background-color: white;
+        color: black;
+        float: center;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }
+
+     .big-btn {
+        width: 90px;
+        height: 40px;
+    }
+
+    input[type="text"] {
+     width: 100%; 
+     box-sizing: border-box;
+     -webkit-box-sizing:border-box;
+     -moz-box-sizing: border-box;
+    }
+
+    input[type="button"]{
+        padding: 10px;
+        border-radius: 10px;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+    }

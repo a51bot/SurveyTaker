@@ -1,0 +1,1 @@
+[{"location":"Kohls","sex":"Female","notes":""},{"location":"BestBuy","sex":"Female","notes":""},{"location":"Starbucks","sex":"Female","notes":""},{"location":"Safeway","sex":"Female","notes":""},{"location":"Target","sex":"Female","notes":""},{"location":"Target","sex":"Female","notes":""}]

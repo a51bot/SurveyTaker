@@ -1,0 +1,50 @@
+html
+  head
+    script(src="clientapp.js")
+    script(src="https://cdn.socket.io/socket.io-1.3.5.js")
+    link(rel="stylesheet", href="style.css")
+  body(align='center', onload='load()')
+    h1 Survey Taker
+    #myform
+      b Data at its finest...
+      table(align='center')
+        tr
+          td Places:
+          td
+            #places
+        tr
+          td Location:
+          td#places
+            input#location(type='text', placeholder='If you want to add a place.  Type it in, and click add')
+          td
+            input.button.btn-sml(type='button', onclick='addPlaceButton()', value='ADD')
+        tr
+          td Sex:
+          td
+            input(type='radio', name='GENDER', value='Male', checked='')
+            |  Male
+            input(type='radio', name='GENDER', value='Female')
+            | Female
+        tr
+          td Notes:
+          td
+            input#notes(type='text', placeholder='Extra thoughts can go here...')
+      // <input class="button big-btn" type="button" id="add" value="Add" onclick="Javascript:addRow()">
+    #mydata
+      b Current data in the system.
+      br
+      b Make sure to hit submit to send the data to the server
+      table#myTableData(border='1', cellpadding='2', align='center')
+        tr
+          td  
+          td
+            b Location
+          td
+            b Sex
+          td
+            b Notes
+          td
+  input#Submit.button.big-btn(type='button', value='STATS', onclick='Javascript:RequestStatsFromServer()')
+  input#cStats.button.big-btn(type='button', value='SUBMIT', onclick='Javascript:SendPPLToServer()')
+  #output
+

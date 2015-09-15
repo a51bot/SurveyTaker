@@ -1,0 +1,19 @@
+TODO:
+
+
+Check for nulls before data is sent to server
+
+
+
+Restructure whole app, so it fits the correct paradim
+	move the js into its own file
+	create array data view/download stats
+
+index.html
+	add comment and bug add section bottom right of page
+
+clientapp.js
+clean up function list (uglify maybe)
+
+
+when im happy put the whole thing up on github
