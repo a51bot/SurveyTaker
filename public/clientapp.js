@@ -1,5 +1,6 @@
 var objectArray = new Array;
 
+var serverAddress = 'http://localhost'; //have to figure out how to make this dynamic
 
 function Person(location, sex, notes){
   this.location =location;
@@ -80,9 +81,9 @@ function addButton(type,value,elementName) {
     //Assign different attributes to the element. 
     
     element.type = type;
-    element.value = value; // Really? You want the default value to be the type string?
-    element.name = elementName;  // And the name too?
-    element.onclick = function() { // Note this is a function
+    element.value = value; 
+    element.name = elementName;  
+    element.onclick = function() {
         addRow(value);
     };
 
@@ -103,7 +104,7 @@ function dumpTable(){
 }
 
 function SendPPLToServer(){
-var socket = io.connect('http://localhost:3000');
+var socket = io.connect(serverAddress+':3000');
 
   socket.emit("objectTable", objectArray);
   /*
@@ -119,9 +120,7 @@ var socket = io.connect('http://localhost:3000');
 */
 }
 
-
 function RequestStatsFromServer(){ 
-  var serverAddress = "http://localhost";
   var socket = io.connect(serverAddress+':3000');
     socket.emit("requestSubmitted",'test');
     socket.on('requestSubmitted',function(objectListIn){
@@ -131,19 +130,21 @@ function RequestStatsFromServer(){
          //var node = document.createElement("link");
          //var textnode = document.createTextNode(objectListIn[i]);
          //node.appendChild(textnode);
-
-         //document.getElementById("output").innterHTML="<p>"+objectListIn[i]+"</p>"
-         
+         //document.getElementById("output").innterHTML="<p>"+objectListIn[i]+"</p>);
           var leftDiv = document.createElement("div"); //Create left div
           leftDiv.id = "left"; //Assign div id
           leftDiv.setAttribute("style", "float:left; width:66.5%; line-height: 26px; text-align:left; font-size:12pt; padding-left:8px; height:26px;"); //Set div attributes
           leftDiv.style.background =  "#FF0000";
           a = document.createElement('a');
-          a.href =  serverAddress+"/"+objectListIn[i]; // Insted of calling setAttribute 
+          a.href =  serverAddress+":8000/"+objectListIn[i]; // Insted of calling setAttribute 
           a.innerHTML = objectListIn[i] // <a>INNER_TEXT</a>
           leftDiv.appendChild(a); // Append the link to the div
           document.body.appendChild(leftDiv); // And append the div to the document body
         }
     });
 
+}
+
+function createUniqueUserToken(){
+  
 }
