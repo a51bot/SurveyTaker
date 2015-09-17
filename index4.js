@@ -30,11 +30,7 @@ console.log("Server listening on port " + appPort);
 
 // Handle the socket.io connections
 io.sockets.on('connection', function (socket) { // init connection
-	socket.on('message', function (data) { // Broadcast the message to all
-
-	});
-	socket.on('disconnect', function () {
-
+	socket.on('requestTxtFile', function (data) {
 	});
 	socket.on("objectTable", function (objectsFromTable) {
 
