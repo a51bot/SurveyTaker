@@ -1,6 +1,10 @@
 var objectArray = new Array;
 
-var serverAddress = 'http://localhost'; //have to figure out how to make this dynamic
+var serverAddress = window.location.href; //have to figure out how to make this dynamic
+var temp = serverAddress.split(":");
+var serverAddress = 'http:'+temp[1];
+
+console.log('SERVER ADDRESS: '+ serverAddress);
 
 function Person(location, sex, notes){
   this.location =location;
